@@ -11,20 +11,12 @@ import UIKit
 class ToDoListViewController: UITableViewController {
 
         //Variables
-    let itemArray = ["Find Mike", "Buy Eggs", "Destroy Demogorgons"]
+    var itemArray = ["Find Mike", "Buy Eggs", "Destroy Demogorgons"]
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-        
     }
 
         //Tableview Datasource Methods
@@ -60,6 +52,28 @@ class ToDoListViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    //Add new items
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem)
+    {
+        
+        var textField = UITextField()
+        let alert = UIAlertController (title: "Add New Todoey Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default){
+            (action) in
+            self.itemArray.append(textField.text!)
+        }
+        
+        alert.addTextField {
+            (alertTextField) in alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 

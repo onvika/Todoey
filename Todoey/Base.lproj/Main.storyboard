@@ -32,7 +32,21 @@
                             <outlet property="delegate" destination="PWe-vV-7sk" id="63K-c0-VI6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="0Ye-d5-INo"/>
+                    <navigationItem key="navigationItem" title="Todoey" id="0Ye-d5-INo">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="v4U-Es-r1e">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="POQ-QA-R5U">
+                                <rect key="frame" x="276" y="1" width="83" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="PWe-vV-7sk" id="mVz-b5-beg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIg-mh-fyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
